@@ -1,0 +1,1087 @@
+{
+	"name": "layer",
+	"versions": {
+		"attack": "9",
+		"navigator": "4.3",
+		"layer": "4.2"
+	},
+	"domain": "enterprise-attack",
+	"description": "",
+	"filters": {
+		"platforms": [
+			"Linux",
+			"macOS",
+			"Windows",
+			"Azure AD",
+			"Office 365",
+			"SaaS",
+			"IaaS",
+			"Google Workspace",
+			"PRE",
+			"Network",
+			"Containers"
+		]
+	},
+	"sorting": 0,
+	"layout": {
+		"layout": "side",
+		"aggregateFunction": "average",
+		"showID": false,
+		"showName": true,
+		"showAggregateScores": false,
+		"countUnscored": false
+	},
+	"hideDisabled": false,
+	"techniques": [
+		{
+			"techniqueID": "T1531",
+			"tactic": "impact",
+			"color": "#fc6b6b",
+			"comment": "Need to check if we can have any API calls only on trails which can give us info to removal of any access on a IAM Role.\nOtherwise out of scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1071",
+			"tactic": "command-and-control",
+			"color": "#fce93b",
+			"comment": "Need to create Rules for \n1. DNS outbound call\n2. FTP outbound call\n3. SMTP outbound call\n\nBut these rules will be noisy and hence need to identify either Threshold rule or with proper fine tuning..",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1560",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1123",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1119",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1020",
+			"tactic": "exfiltration",
+			"color": "#fc6b6b",
+			"comment": "Out of scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1115",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1092",
+			"tactic": "command-and-control",
+			"color": "#fc6b6b",
+			"comment": "Not within scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1485",
+			"tactic": "impact",
+			"color": "#fce93b",
+			"comment": "Partially Within Scope via Cloudtrail.\nNeed to grab API Calls for Storage Objects (S3) and RDS.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1486",
+			"tactic": "impact",
+			"color": "#fc6b6b",
+			"comment": "Not within scope since don't have any EDR solution.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1565",
+			"tactic": "impact",
+			"color": "#fc6b6b",
+			"comment": "Not within Scope, need DLP for this",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1030",
+			"tactic": "exfiltration",
+			"color": "#fce93b",
+			"comment": "We can drop a threshold rule after monitoring the highest volume of bytes trasnfer to external IPs",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1530",
+			"tactic": "collection",
+			"color": "#fce93b",
+			"comment": "1. Need to create rule to track API Calls for S3/RDS for data deletion.\n2. detecting failed attempts by a user for a certain object, followed by escalation of privileges by the same user.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1602",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1213",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1039",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1025",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1491",
+			"tactic": "impact",
+			"color": "#fc6b6b",
+			"comment": "Monitor internal and external websites for unplanned content changes. Monitor application logs for abnormal behavior that may indicate attempted or successful exploitation. Use deep packet inspection to look for artifacts of common exploit traffic, such as SQL injection. Web Application Firewalls may detect improper inputs attempting exploitation.\n\nThese are out of scope for now.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1561",
+			"tactic": "impact",
+			"color": "#fc6b6b",
+			"comment": "Not within Scope, since we don't have capability to capture a Content/structure wipe.\nOnly possibility if we do have RDS query logs, that can contribute to this Technique",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1114",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1499",
+			"tactic": "impact",
+			"color": "#fc6b6b",
+			"comment": "We don't have any network throughput monitoring tools . Also,. we don't have web server, application server, and/or database server logs which only can identify this",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1041",
+			"tactic": "exfiltration",
+			"color": "#fcf26b",
+			"comment": "Monitor for C2 communication on known ports to external IP addresses.\nThis will be a really noisy rule, hence need to do proper RnD to decide the parameters!!",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1011",
+			"tactic": "exfiltration",
+			"color": "#fc6b6b",
+			"comment": "Not relevant for our usecase",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1052",
+			"tactic": "exfiltration",
+			"color": "#fc6b6b",
+			"comment": "Not relevant for our usecase",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1567",
+			"tactic": "exfiltration",
+			"color": "#fc6b6b",
+			"comment": "The dataset to identify the Cloud Storage and Code repo is quite large and with the set of log sources we have now, this is out of scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1495",
+			"tactic": "impact",
+			"color": "#fc6b6b",
+			"comment": "Not relevant for Cloud Usecase.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1490",
+			"tactic": "impact",
+			"color": "#fc6b6b",
+			"comment": "Not relevant for Cloud Usecase.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1056",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1056",
+			"tactic": "credential-access",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1185",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1557",
+			"tactic": "credential-access",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1557",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1498",
+			"tactic": "impact",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1498.002",
+			"tactic": "impact",
+			"color": "#fce93b",
+			"comment": "Partially possible via VPC flow logs. Need to identify if we can write the exact query where network byte gets amplified in a sequence by a normal flow",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1496",
+			"tactic": "impact",
+			"color": "#fc6b6b",
+			"comment": "Monitoring process resource usage to determine anomalous activity associated with malicious hijacking of computer resources.\n\nHence out of scope as of now, We need unix process logs visibility to identify anything suspicious. ",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1113",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1489",
+			"tactic": "impact",
+			"color": "#fce93b",
+			"comment": "Partially possible.\n\nAnd we have enabled the rule to monitor Security Solution stoppage via INFA-06-Cloudtrail-Defense Evasion",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1529",
+			"tactic": "impact",
+			"color": "#74c476",
+			"comment": "Can be Captured as part of CloudTrail logs",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1537",
+			"tactic": "exfiltration",
+			"color": "#fce93b",
+			"comment": "Partially possible-\n1. Monitor CloudTrail API calls for share  snapshots, or backups with untrusted or unusual accounts on AWS\n2. Monitor for large bytes transfer inbound within VPCs\n3. Monitor for large bytes transfer outbound to external IP.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078",
+			"tactic": "defense-evasion",
+			"color": "#fce93b",
+			"comment": "Detection Rule to monitor for an IAM Account Creation.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "Detection Rule to monitor for an IAM Account Creation.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078",
+			"tactic": "privilege-escalation",
+			"color": "#fce93b",
+			"comment": "Detection Rule to monitor for an IAM Account Creation.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1078",
+			"tactic": "initial-access",
+			"color": "#fce93b",
+			"comment": "Detection Rule to monitor for an IAM Account Creation.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1125",
+			"tactic": "collection",
+			"color": "#fc6b6b",
+			"comment": "Out of scope for Cloud Usecases",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1087",
+			"tactic": "discovery",
+			"color": "#fce93b",
+			"comment": "Can be identified with Cloudtrail monitoring and GD alerts",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1087.004",
+			"tactic": "discovery",
+			"color": "#fce93b",
+			"comment": "Can be identified with Cloudtrail monitoring and GD alerts",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1098",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "Can be tracked via CloudTrail and Config logs if we have someone creating multiple API Keys",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1098.001",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "Can be tracked via CloudTrail and Config logs if we have someone creating multiple API Keys",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1595",
+			"tactic": "reconnaissance",
+			"color": "#fce93b",
+			"comment": "Partially within Scope via VPC Flow logs and GD alerts.\nNeed to drop detection rules",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1595.001",
+			"tactic": "reconnaissance",
+			"color": "#fce93b",
+			"comment": "Partially within Scope via VPC Flow logs and GD alerts.\nNeed to drop detection rules",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1110",
+			"tactic": "credential-access",
+			"color": "#fce93b",
+			"comment": "Partially possible with the CloudTrail Logs. Need to deploy the Detection Rule",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1110.001",
+			"tactic": "credential-access",
+			"color": "#fce93b",
+			"comment": "Partially possible with the CloudTrail Logs. Need to deploy the Detection Rule",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1110.002",
+			"tactic": "credential-access",
+			"color": "#fce93b",
+			"comment": "Partially possible with the CloudTrail Logs. Need to deploy the Detection Rule",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1110.003",
+			"tactic": "credential-access",
+			"color": "#fce93b",
+			"comment": "Partially possible with the CloudTrail Logs. Need to deploy the Detection Rule",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1580",
+			"tactic": "discovery",
+			"color": "#fce93b",
+			"comment": "Can be identified with Cloudtrail monitoring and GD alerts",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1526",
+			"tactic": "discovery",
+			"color": "#fce93b",
+			"comment": "Can be identified with Cloudtrail monitoring and GD alerts",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1059",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Presence of these tools can be identified from EC2 audit logs provided we are capturing the commands arguments for suspicious activities. \nAlternative solution is to have a EDR solution.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1059.001",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Presence of these tools can be identified from EC2 audit logs provided we are capturing the commands arguments for suspicious activities. \nAlternative solution is to have a EDR solution.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1059.003",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Presence of these tools can be identified from EC2 audit logs provided we are capturing the commands arguments for suspicious activities. \nAlternative solution is to have a EDR solution.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1059.004",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Presence of these tools can be identified from EC2 audit logs provided we are capturing the commands arguments for suspicious activities. \nAlternative solution is to have a EDR solution.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1059.005",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Presence of these tools can be identified from EC2 audit logs provided we are capturing the commands arguments for suspicious activities. \nAlternative solution is to have a EDR solution.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1059.006",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Presence of these tools can be identified from EC2 audit logs provided we are capturing the commands arguments for suspicious activities. \nAlternative solution is to have a EDR solution.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1584",
+			"tactic": "resource-development",
+			"color": "#fce93b",
+			"comment": "This can be only viewed/captured at C2 level with subcategories or anomaly behavior with a High Correlation DataSet",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1555",
+			"tactic": "credential-access",
+			"color": "#fce93b",
+			"comment": "Partially possible via CloudTrail Logs where we access tokens/ secrets from Vaults.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1555.005",
+			"tactic": "credential-access",
+			"color": "#fce93b",
+			"comment": "Partially possible via CloudTrail Logs where we access tokens/ secrets from Vaults.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1190",
+			"tactic": "initial-access",
+			"color": "#fc6b6b",
+			"comment": "Out of Scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1133",
+			"tactic": "persistence",
+			"color": "#fc6b6b",
+			"comment": "Out of Scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1133",
+			"tactic": "initial-access",
+			"color": "#fc6b6b",
+			"comment": "Out of Scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1200",
+			"tactic": "initial-access",
+			"color": "#fc6b6b",
+			"comment": "Out of Scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1562",
+			"tactic": "defense-evasion",
+			"color": "#74c476",
+			"comment": "Possible via Cloudtrail API monitoring",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1562.001",
+			"tactic": "defense-evasion",
+			"color": "#74c476",
+			"comment": "Possible via Cloudtrail API monitoring",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1562.002",
+			"tactic": "defense-evasion",
+			"color": "#74c476",
+			"comment": "Possible via Cloudtrail API monitoring",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1562.003",
+			"tactic": "defense-evasion",
+			"color": "#74c476",
+			"comment": "Possible via Cloudtrail API monitoring",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1562.004",
+			"tactic": "defense-evasion",
+			"color": "#74c476",
+			"comment": "Possible via Cloudtrail API monitoring",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1562.006",
+			"tactic": "defense-evasion",
+			"color": "#74c476",
+			"comment": "Possible via Cloudtrail API monitoring",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1562.007",
+			"tactic": "defense-evasion",
+			"color": "#74c476",
+			"comment": "Possible via Cloudtrail API monitoring",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1562.008",
+			"tactic": "defense-evasion",
+			"color": "#74c476",
+			"comment": "Possible via Cloudtrail API monitoring",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1556",
+			"tactic": "credential-access",
+			"color": "#fc6b6b",
+			"comment": "Not relevant for Cloud",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1556",
+			"tactic": "defense-evasion",
+			"color": "#fc6b6b",
+			"comment": "Not relevant for Cloud",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1556",
+			"tactic": "persistence",
+			"color": "#fc6b6b",
+			"comment": "Not relevant for Cloud",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1566",
+			"tactic": "initial-access",
+			"color": "#fc6b6b",
+			"comment": "Out of Scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1598",
+			"tactic": "reconnaissance",
+			"color": "#fc6b6b",
+			"comment": "Not relevant for Cloud",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1091",
+			"tactic": "lateral-movement",
+			"color": "#fc6b6b",
+			"comment": "Out of Scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1091",
+			"tactic": "initial-access",
+			"color": "#fc6b6b",
+			"comment": "Out of Scope",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Presence of these tools can be identified from EC2 audit logs provided we are capturing the commands arguments for suspicious activities. \nAlternative solution is to have a EDR solution.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "Presence of these tools can be identified from EC2 audit logs provided we are capturing the commands arguments for suspicious activities. \nAlternative solution is to have a EDR solution.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053",
+			"tactic": "privilege-escalation",
+			"color": "#fce93b",
+			"comment": "Presence of these tools can be identified from EC2 audit logs provided we are capturing the commands arguments for suspicious activities. \nAlternative solution is to have a EDR solution.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.002",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.002",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.002",
+			"tactic": "privilege-escalation",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.005",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.005",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.005",
+			"tactic": "privilege-escalation",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.001",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.001",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.001",
+			"tactic": "privilege-escalation",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.004",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.004",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.004",
+			"tactic": "privilege-escalation",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.003",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.003",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.003",
+			"tactic": "privilege-escalation",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.006",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.006",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.006",
+			"tactic": "privilege-escalation",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.007",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.007",
+			"tactic": "persistence",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1053.007",
+			"tactic": "privilege-escalation",
+			"color": "#fce93b",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1535",
+			"tactic": "defense-evasion",
+			"color": "#fce93b",
+			"comment": "Monitoring can be done via CloudTrail",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1204",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Possible via logging with EDR solution and with a correlation rule from AWS GD, IDPS Solution",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1204.001",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Possible via logging with EDR solution and with a correlation rule from AWS GD, IDPS Solution",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1204.002",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Possible via logging with EDR solution and with a correlation rule from AWS GD, IDPS Solution",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1204.003",
+			"tactic": "execution",
+			"color": "#fce93b",
+			"comment": "Possible via logging with EDR solution and with a correlation rule from AWS GD, IDPS Solution",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1102",
+			"tactic": "command-and-control",
+			"color": "#fce93b",
+			"comment": "Can be identified with VPC Flow logs and with any kind of Firewall logs.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1102.002",
+			"tactic": "command-and-control",
+			"color": "#fce93b",
+			"comment": "Can be identified with VPC Flow logs and with any kind of Firewall logs.",
+			"enabled": true,
+			"metadata": [],
+			"showSubtechniques": false
+		}
+	],
+	"gradient": {
+		"colors": [
+			"#ff6666",
+			"#ffe766",
+			"#8ec843"
+		],
+		"minValue": 0,
+		"maxValue": 100
+	},
+	"legendItems": [],
+	"metadata": [],
+	"showTacticRowBackground": false,
+	"tacticRowBackground": "#dddddd",
+	"selectTechniquesAcrossTactics": true,
+	"selectSubtechniquesWithParent": false
+}
